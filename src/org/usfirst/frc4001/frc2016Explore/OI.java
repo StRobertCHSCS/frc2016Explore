@@ -51,7 +51,9 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
 
 	public JoystickButton intakeButton;
+	public JoystickButton low_shoot;
 	public Joystick joystick;
+	public Joystick game_controller;
 
 
     public OI() {
@@ -60,10 +62,22 @@ public class OI {
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("IntakeReceive", new IntakeReceive());
         
-        // Joystick Button 2 --> Intake control
-        joystick = new Joystick(0);
-        intakeButton = new JoystickButton(joystick,2);
+        
+        game_controller = new Joystick(0);
+        joystick = new Joystick(1);
+        
+        // *** GAME CONTROLLER BUTTONS & CONTROL ***
+        
+        //game_controller button 6 (RB)
+        intakeButton = new JoystickButton(game_controller,6);
         intakeButton.whenPressed(new IntakeReceive());
+        
+        // *** JOYSTICK BUTTONS & CONTROL ***
+        
+        //low shoot
+        low_shoot = new JoystickButton(joystick, 3);
+        low_shoot.whileHeld(new ShootLow());
+        
     }
 
 }

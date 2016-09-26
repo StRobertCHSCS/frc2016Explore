@@ -36,18 +36,27 @@ public class Intake extends Subsystem {
     }
     
     public void receive(){
+    	// roll in the ball
     	controller.set(0.5);
     }
     
     public void stop(){
+    	// halt movement of intake
     	controller.set(0);
     }
     
     public void eject(){
+    	// eject the ball at half speed
     	controller.set(-0.5);
     }
     
-    public boolean switchPressed(){
+    public void fire(){
+    	// eject the ball at full speed
+    	controller.set(-1);
+    }
+    
+    public boolean ballset(){
+    	// ball is set in position
     	return !(limitSwitch.get());
     }
     
