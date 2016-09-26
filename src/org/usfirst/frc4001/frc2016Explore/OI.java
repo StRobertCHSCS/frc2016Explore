@@ -70,7 +70,7 @@ public class OI {
         
         //game_controller button 6 (RB)
         intakeButton = new JoystickButton(game_controller,6);
-        intakeButton.whenPressed(new IntakeReceive());
+        intakeButton.whileHeld(new IntakeReceive());
         
         // *** JOYSTICK BUTTONS & CONTROL ***
         
