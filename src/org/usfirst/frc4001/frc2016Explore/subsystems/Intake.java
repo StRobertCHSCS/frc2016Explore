@@ -15,6 +15,7 @@ import org.usfirst.frc4001.frc2016Explore.RobotMap;
 import org.usfirst.frc4001.frc2016Explore.commands.*;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Solenoid;
 
 	
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -27,6 +28,8 @@ public class Intake extends Subsystem {
 
     private final DigitalInput limitSwitch = RobotMap.intakelimitSwitch;
     private final CANTalon controller = RobotMap.intakecontroller;
+    private final Solenoid roller_open = RobotMap.intakerollopen;
+    private final Solenoid roller_close = RobotMap.intakerollclose;
 
 
     public void initDefaultCommand() {
@@ -59,6 +62,21 @@ public class Intake extends Subsystem {
     	// ball is set in position
     	return !(limitSwitch.get());
     }
+    
+    public void open_roller(){
+    	// open the roller
+    	roller_open.set(true);
+    	roller_close.set(false);
+    	
+    }
+    
+    public void close_roller(){
+    	// close the roller
+    	roller_open.set(false);
+    	roller_close.set(true);
+ 
+    }
+    	
     
 }
 
