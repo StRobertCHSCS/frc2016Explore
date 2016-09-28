@@ -23,22 +23,24 @@ public class IntakeReceive extends Command {
     public IntakeReceive() {
         requires(Robot.intake);
     }
+
     
     // Called just before this Command runs the first time
     protected void initialize() {
-    	System.out.print("Intake Receive");
+    	System.out.print("IntakeReceive.initialize()");
+    	//Robot.intake.receive();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	//System.out.print("IntakeReceive.execute()");
+    	System.out.print("IntakeReceive.execute()");
     	Robot.intake.receive();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	//return false;
-    	return Robot.intake.ballset();
+    	return Robot.intake.switchPressed();
     }
 
     // Called once after isFinished returns true
