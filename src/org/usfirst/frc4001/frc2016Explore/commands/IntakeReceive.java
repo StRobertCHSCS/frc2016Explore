@@ -12,6 +12,8 @@
 package org.usfirst.frc4001.frc2016Explore.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc4001.frc2016Explore.Robot;
 
 /**

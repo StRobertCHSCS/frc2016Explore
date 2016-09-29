@@ -59,6 +59,9 @@ public class Robot extends IterativeRobot {
         // instantiate the command used for the autonomous period
         autonomousCommand = new AutonomousCommand();
         SmartDashboard.putData(Scheduler.getInstance());
+        SmartDashboard.putBoolean(" LOW FIRE", false);
+        
+        
     }
 
     /**
@@ -98,6 +101,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        SmartDashboard.putBoolean(" BALL IN POSITION", intake.ballset());
     }
 
     /**
