@@ -13,7 +13,7 @@ public class RollerDown extends Command {
     public RollerDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.intake);
+    	requires(Robot.roller);
     }
 
     // Called just before this Command runs the first time
@@ -25,7 +25,7 @@ public class RollerDown extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	System.out.println("RollerDown execute");
-    	Robot.intake.down_roller();
+    	Robot.roller.down_roller();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -38,14 +38,14 @@ public class RollerDown extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	//System.out.println("RollerDown end");
-    	Robot.intake.up_roller();
+    	Robot.roller.up_roller();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
     	//System.out.println("RollerDown interrupted");
-    	Robot.intake.up_roller();
+    	Robot.roller.up_roller();
     
     }
 }

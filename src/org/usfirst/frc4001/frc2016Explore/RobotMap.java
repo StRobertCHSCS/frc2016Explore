@@ -30,8 +30,8 @@ public class RobotMap {
     // declare raw component variables
     public static DigitalInput intakelimitSwitch;
     public static CANTalon intakecontroller;
-    public static Solenoid intakerollup;
-    public static Solenoid intakerolldown;
+    public static Solenoid roller_rollup;
+    public static Solenoid roller_rolldown;
     
 
     public static void init() {
@@ -45,10 +45,10 @@ public class RobotMap {
         LiveWindow.addActuator("Intake", "controller", intakecontroller);
         
         
-        intakerolldown = new Solenoid(0);
-        intakerollup = new Solenoid(1);
-        LiveWindow.addActuator("Intake", "roller_up", intakerollup);
-        LiveWindow.addActuator("Intake", "roller_down", intakerolldown);
+        roller_rolldown = new Solenoid(0);
+        roller_rollup = new Solenoid(1);
+        LiveWindow.addActuator("Roller", "roller_up", roller_rollup);
+        LiveWindow.addActuator("Roller", "roller_down", roller_rolldown);
         
     }
 }

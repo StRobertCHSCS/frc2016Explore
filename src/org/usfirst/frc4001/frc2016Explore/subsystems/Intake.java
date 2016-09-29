@@ -15,8 +15,7 @@ public class Intake extends Subsystem {
 
     private final DigitalInput limitSwitch = RobotMap.intakelimitSwitch;
     private final CANTalon controller = RobotMap.intakecontroller;
-    private final Solenoid roller_up = RobotMap.intakerollup;
-    private final Solenoid roller_down = RobotMap.intakerolldown;
+    
 
 
     public void initDefaultCommand() {
@@ -51,19 +50,7 @@ public class Intake extends Subsystem {
     }
     
 
-    public void up_roller(){
-    	// open the roller
-    	roller_up.set(true);
-    	roller_down.set(false);
 
-    }
-    
-    public void down_roller(){
-    	// close the roller
-    	roller_up.set(false);
-    	roller_down.set(true);
- 
-    }
     	
     
 }

@@ -35,6 +35,7 @@ public class Robot extends IterativeRobot {
     
     //Declare subsystems
     public static Intake intake;
+    public static Roller roller;
 
 
     /**
@@ -46,6 +47,7 @@ public class Robot extends IterativeRobot {
     
         // Instantiate Subsystems
         intake = new Intake();
+        roller = new Roller();
 
         
         // OI must be constructed after subsystems. If the OI creates Commands
