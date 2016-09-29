@@ -58,7 +58,7 @@ public class OI {
 	public JoystickButton low_shoot;
 	public Joystick joystick;
 	public Joystick game_controller;
-	public AxisButton axis_button;
+	public Button axis_button;
 
 
     public OI() {

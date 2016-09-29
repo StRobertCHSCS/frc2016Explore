@@ -14,8 +14,10 @@ public class AxisButton extends Button {
 	}
 	
 	public boolean get(){
+		//System.out.println(joystick.getRawAxis(joystick_axis));
 		return joystick.getRawAxis(joystick_axis) > 0;
 	}
+	
 	
 	
 }

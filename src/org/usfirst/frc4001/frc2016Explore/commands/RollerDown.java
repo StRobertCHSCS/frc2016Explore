@@ -1,6 +1,7 @@
 package org.usfirst.frc4001.frc2016Explore.commands;
 
 import org.usfirst.frc4001.frc2016Explore.Robot;
+import org.usfirst.frc4001.frc2016Explore.OI;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -18,7 +19,7 @@ public class RollerDown extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	System.out.println("RollerDown Init");
-    	//Robot.intake.up_roller();
+    	//Robot.intake.down_roller();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -29,18 +30,22 @@ public class RollerDown extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	//System.out.println("RollerDown isFinished?");
+    	//System.out.println(Robot.oi.axis_button.get());
+        return !Robot.oi.axis_button.get();
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	System.out.println("RollerDown end");
+    	//System.out.println("RollerDown end");
     	Robot.intake.up_roller();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	//System.out.println("RollerDown interrupted");
+    	Robot.intake.up_roller();
     
     }
 }
