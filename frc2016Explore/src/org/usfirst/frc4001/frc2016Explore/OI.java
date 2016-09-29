@@ -14,11 +14,7 @@ package org.usfirst.frc4001.frc2016Explore;
 import org.usfirst.frc4001.frc2016Explore.commands.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import org.usfirst.frc4001.frc2016Explore.AxisButton;
-
-
 
 
 
@@ -55,10 +51,7 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
 
 	public JoystickButton intakeButton;
-	public JoystickButton low_shoot;
 	public Joystick joystick;
-	public Joystick game_controller;
-	public AxisButton axis_button;
 
 
     public OI() {
@@ -66,29 +59,12 @@ public class OI {
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("IntakeReceive", new IntakeReceive());
-        SmartDashboard.putData("Roller Down", new RollerDown());
         
-        
-        game_controller = new Joystick(0);
-        joystick = new Joystick(1);
-        
-        // *** GAME CONTROLLER BUTTONS & CONTROL ***
-        
-        //game_controller button 6 (RB)
-        intakeButton = new JoystickButton(game_controller,6);
-        intakeButton.whileHeld(new IntakeReceive());
-        
-        // *** JOYSTICK BUTTONS & CONTROL ***
-        
-        //low shoot
-        low_shoot = new JoystickButton(joystick, 3);
-        low_shoot.whileHeld(new ShootLow());
-        
-        System.out.println("checking right trigger");
-        axis_button = new AxisButton(game_controller, 3);
-        axis_button.whileHeld(new RollerDown());
-        
+        // Joystick Button 2 --> Intake control
+        joystick = new Joystick(0);
+        intakeButton = new JoystickButton(joystick,2);
+        intakeButton.whenPressed(new IntakeReceive());
     }
-    
+
 }
 
