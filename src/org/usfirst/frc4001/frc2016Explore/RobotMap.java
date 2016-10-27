@@ -38,7 +38,7 @@ public class RobotMap {
         // Instantiate raw mappings of components
     	
     	// INTAKE COMPONENTS
-        intakelimitSwitch = new DigitalInput(9);
+        intakelimitSwitch = new DigitalInput(8);
         LiveWindow.addActuator("Intake", "limitSwitch", intakelimitSwitch);
         
         intakecontroller = new CANTalon(19);
