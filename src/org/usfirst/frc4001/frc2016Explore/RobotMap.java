@@ -32,6 +32,8 @@ public class RobotMap {
     public static CANTalon intakecontroller;
     public static Solenoid roller_rollup;
     public static Solenoid roller_rolldown;
+    public static CANTalon drive1;
+    public static CANTalon drive2;
     
 
     public static void init() {
@@ -49,6 +51,12 @@ public class RobotMap {
         roller_rollup = new Solenoid(1);
         LiveWindow.addActuator("Roller", "roller_up", roller_rollup);
         LiveWindow.addActuator("Roller", "roller_down", roller_rolldown);
+        
+        // Drive Train
+        drive1 = new CANTalon(14);
+        drive2 = new CANTalon(17);
+        
+        
         
     }
 }
