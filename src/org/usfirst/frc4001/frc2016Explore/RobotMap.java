@@ -11,6 +11,8 @@
 
 package org.usfirst.frc4001.frc2016Explore;
 
+import com.team4001.lib.util.SystemsMap;
+
 // Import libraries for components
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -32,29 +34,29 @@ public class RobotMap {
     public static CANTalon intakecontroller;
     public static Solenoid roller_rollup;
     public static Solenoid roller_rolldown;
-    public static CANTalon drive1;
-    public static CANTalon drive2;
+    public static CANTalon left_motor;
+    public static CANTalon right_motor;
     
 
     public static void init() {
         // Instantiate raw mappings of components
     	
     	// INTAKE COMPONENTS
-        intakelimitSwitch = new DigitalInput(8);
+        intakelimitSwitch = new DigitalInput(SystemsMap.DIO_INTAKE_LIMITSWITCH);
         LiveWindow.addActuator("Intake", "limitSwitch", intakelimitSwitch);
         
-        intakecontroller = new CANTalon(19);
+        intakecontroller = new CANTalon(SystemsMap.CAN_INTAKE_MOTOR);
         LiveWindow.addActuator("Intake", "controller", intakecontroller);
         
         
-        roller_rolldown = new Solenoid(0);
-        roller_rollup = new Solenoid(1);
+        roller_rolldown = new Solenoid(SystemsMap.SOLENIOD_ROLLER_DOWN);
+        roller_rollup = new Solenoid(SystemsMap.SOLENIOD_ROLLER_UP);
         LiveWindow.addActuator("Roller", "roller_up", roller_rollup);
         LiveWindow.addActuator("Roller", "roller_down", roller_rolldown);
         
         // Drive Train
-        drive1 = new CANTalon(14);
-        drive2 = new CANTalon(17);
+        left_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_LEFT);
+        right_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_RIGHT);
         
         
         

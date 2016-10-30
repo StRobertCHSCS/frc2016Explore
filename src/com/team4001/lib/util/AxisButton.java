@@ -1,4 +1,4 @@
-package org.usfirst.frc4001.frc2016Explore;
+package com.team4001.lib.util;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.Joystick;
 

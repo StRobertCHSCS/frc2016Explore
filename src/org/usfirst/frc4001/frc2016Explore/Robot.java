@@ -36,6 +36,7 @@ public class Robot extends IterativeRobot {
     //Declare subsystems
     public static Intake intake;
     public static Roller roller;
+    public static DriveTrain driver;
 
 
     /**
