@@ -12,6 +12,7 @@
 package org.usfirst.frc4001.frc2016Explore;
 
 import org.usfirst.frc4001.frc2016Explore.commands.*;
+import com.team4001.lib.util.*;
 
 import com.team4001.lib.util.AxisButton;
 
@@ -59,8 +60,9 @@ public class OI {
 	public JoystickButton intakeButton;
 	public JoystickButton low_shoot;
 	public Joystick joystick;
-	public Joystick game_controller;
-	public Button axis_button;
+	public Gamepad game_controller;
+	//public Button axis_button;
+	public JoystickButton roller_down;
 
 
     public OI() {
@@ -71,13 +73,14 @@ public class OI {
         SmartDashboard.putData("Roller Down", new RollerDown());
         
         
-        game_controller = new Joystick(0);
+        game_controller = new Gamepad(0);
         joystick = new Joystick(1);
         
         // *** GAME CONTROLLER BUTTONS & CONTROL ***
         
         //game_controller button 6 (RB)
-        intakeButton = new JoystickButton(game_controller,6);
+        //intakeButton = new JoystickButton(game_controller,6);
+        intakeButton = game_controller.getRightShoulder();
         intakeButton.whileHeld(new IntakeReceive());
         
         // *** JOYSTICK BUTTONS & CONTROL ***
@@ -87,8 +90,11 @@ public class OI {
         low_shoot.whileHeld(new ShootLow());
         
         System.out.println("checking right trigger");
-        axis_button = new AxisButton(game_controller, 3);
-        axis_button.whileHeld(new RollerDown());
+        //axis_button = new AxisButton(game_controller, 3);
+        roller_down = game_controller.getRightTriggerClick();
+        
+        //axis_button.whileHeld(new RollerDown());
+        roller_down.whileHeld(new RollerDown());
         
         
 

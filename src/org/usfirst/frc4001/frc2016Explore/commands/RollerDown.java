@@ -32,7 +32,8 @@ public class RollerDown extends Command {
     protected boolean isFinished() {
     	//System.out.println("RollerDown isFinished?");
     	//System.out.println(Robot.oi.axis_button.get());
-        return !Robot.oi.axis_button.get();
+        //return !Robot.oi.axis_button.get();
+    	return !Robot.oi.game_controller.getRightTriggerClick().get();
     }
 
     // Called once after isFinished returns true
