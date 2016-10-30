@@ -49,8 +49,8 @@ public class RobotMap {
         LiveWindow.addActuator("Intake", "controller", intakecontroller);
         
         
-        roller_rolldown = new Solenoid(SystemsMap.SOLENIOD_ROLLER_DOWN);
-        roller_rollup = new Solenoid(SystemsMap.SOLENIOD_ROLLER_UP);
+        roller_rolldown = new Solenoid(SystemsMap.SOLENOID_ROLLER_DOWN);
+        roller_rollup = new Solenoid(SystemsMap.SOLENOID_ROLLER_UP);
         LiveWindow.addActuator("Roller", "roller_up", roller_rollup);
         LiveWindow.addActuator("Roller", "roller_down", roller_rolldown);
         
