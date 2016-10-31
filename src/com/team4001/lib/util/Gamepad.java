@@ -2,6 +2,7 @@ package com.team4001.lib.util;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import com.team4001.lib.util.AxisButton;
 
 /**
  * Contains functions for use with the Logitech F310 controller. COURTESY OF TEAM 254
@@ -12,8 +13,10 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class Gamepad extends Joystick {
   // Gamepad axis ports
-  private static final int AXIS_LEFT_X = 1;
-  private static final int AXIS_LEFT_Y = 2;
+  //private static final int AXIS_LEFT_X = 1;
+  private static final int AXIS_LEFT_X = 0;
+  //private static final int AXIS_LEFT_Y = 2;
+  private static final int AXIS_LEFT_Y = 1;
   private static final int AXIS_SHOULDER = 3;
   private static final int AXIS_RIGHT_X = 4;
   private static final int AXIS_RIGHT_Y = 5;
@@ -191,4 +194,18 @@ public class Gamepad extends Joystick {
   public JoystickButton getRightTriggerClick() {
     return new JoystickButton(this, BUTTON_TRIGGER_RIGHT);
   }
+  
+  
+  // Team 4001 edits
+  
+  public AxisButton getRightAxisButton(){
+	  return new AxisButton(this, AXIS_SHOULDER);
+  }
+
+  /**
+  public int getLeftY_ID(){
+	  return this.AXIS_LEFT_Y;
+  }
+  **/
+  
 }

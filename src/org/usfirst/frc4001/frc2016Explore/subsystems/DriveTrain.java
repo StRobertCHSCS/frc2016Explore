@@ -14,9 +14,12 @@ public class DriveTrain extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-	private final CANTalon leftMotor = RobotMap.left_motor;
-	private final CANTalon rightMotor = RobotMap.right_motor;
-	private final RobotDrive drive = new RobotDrive(leftMotor, rightMotor);
+	private final CANTalon frontLeftMotor = RobotMap.front_left_motor;
+	private final CANTalon rearLeftMotor = RobotMap.rear_left_motor;
+	private final CANTalon frontRightMotor = RobotMap.front_right_motor;
+	private final CANTalon rearRightMotor = RobotMap.rear_right_motor;
+	
+	private final RobotDrive drive = new RobotDrive(frontLeftMotor, rearLeftMotor,frontRightMotor , rearRightMotor);
 	
 
     public void initDefaultCommand() {
@@ -27,13 +30,12 @@ public class DriveTrain extends Subsystem {
     
     
     public void arcadeDrive(double forward, double turn){
-    	drive.arcadeDrive(forward, turn);
+    	drive.arcadeDrive(forward, turn,false);
 
     }
     
     public void hardStop(){
-    	leftMotor.set(0);
-    	rightMotor.set(0);
+    	drive.arcadeDrive(0, 0);
     }
     
     

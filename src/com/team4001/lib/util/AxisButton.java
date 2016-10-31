@@ -18,6 +18,4 @@ public class AxisButton extends Button {
 		return joystick.getRawAxis(joystick_axis) > 0;
 	}
 	
-	
-	
 }

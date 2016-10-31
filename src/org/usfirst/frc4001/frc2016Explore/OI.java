@@ -18,7 +18,7 @@ import com.team4001.lib.util.AxisButton;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
+//import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 
@@ -62,7 +62,7 @@ public class OI {
 	public Joystick joystick;
 	public Gamepad game_controller;
 	//public Button axis_button;
-	public JoystickButton roller_down;
+	public AxisButton roller_down;
 
 
     public OI() {
@@ -91,7 +91,8 @@ public class OI {
         
         System.out.println("checking right trigger");
         //axis_button = new AxisButton(game_controller, 3);
-        roller_down = game_controller.getRightTriggerClick();
+        //roller_down = game_controller.getRightTriggerClick();
+        roller_down = game_controller.getRightAxisButton();
         
         //axis_button.whileHeld(new RollerDown());
         roller_down.whileHeld(new RollerDown());

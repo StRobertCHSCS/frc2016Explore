@@ -26,6 +26,7 @@ public class ArcadeDrive extends Command {
     	double moveforward = Robot.oi.game_controller.getLeftY();
     	//double turn = Robot.oi.game_controller.getRawAxis(4);
     	double turn = Robot.oi.game_controller.getRightX();
+    	//System.out.println("Arcade Drive Execute");
     	Robot.driver.arcadeDrive(moveforward, turn);
     }
 

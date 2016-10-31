@@ -34,8 +34,10 @@ public class RobotMap {
     public static CANTalon intakecontroller;
     public static Solenoid roller_rollup;
     public static Solenoid roller_rolldown;
-    public static CANTalon left_motor;
-    public static CANTalon right_motor;
+    public static CANTalon rear_left_motor;
+    public static CANTalon rear_right_motor;
+    public static CANTalon front_left_motor;
+    public static CANTalon front_right_motor;
     
 
     public static void init() {
@@ -55,8 +57,16 @@ public class RobotMap {
         LiveWindow.addActuator("Roller", "roller_down", roller_rolldown);
         
         // Drive Train
-        left_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_LEFT);
-        right_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_RIGHT);
+        rear_left_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_REAR_LEFT);
+        rear_right_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_REAR_RIGHT);
+        front_left_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_FRONT_LEFT);
+        front_right_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_FRONT_RIGHT);
+        
+        rear_left_motor.setInverted(true);
+        front_left_motor.setInverted(true);
+        rear_right_motor.setInverted(true);
+        front_right_motor.setInverted(true);
+        
         
         
         
