@@ -38,7 +38,7 @@ public class RobotMap {
     public static CANTalon rear_right_motor;
     public static CANTalon front_left_motor;
     public static CANTalon front_right_motor;
-    
+    public static CANTalon highshoot_motor;
 
     public static void init() {
         // Instantiate raw mappings of components
@@ -50,7 +50,7 @@ public class RobotMap {
         intakecontroller = new CANTalon(SystemsMap.CAN_INTAKE_MOTOR);
         LiveWindow.addActuator("Intake", "controller", intakecontroller);
         
-        
+        //Roller
         roller_rolldown = new Solenoid(SystemsMap.SOLENOID_ROLLER_DOWN);
         roller_rollup = new Solenoid(SystemsMap.SOLENOID_ROLLER_UP);
         LiveWindow.addActuator("Roller", "roller_up", roller_rollup);
@@ -66,6 +66,9 @@ public class RobotMap {
         front_left_motor.setInverted(true);
         rear_right_motor.setInverted(true);
         front_right_motor.setInverted(true);
+        
+        // High Shooter
+        highshoot_motor = new CANTalon(SystemsMap.CAN_HIGHSHOOTER);
         
         
         

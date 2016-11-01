@@ -37,6 +37,7 @@ public class Robot extends IterativeRobot {
     public static Intake intake;
     public static Roller roller;
     public static DriveTrain driver;
+    public static HighShooter shooter;
 
 
     /**
@@ -50,6 +51,7 @@ public class Robot extends IterativeRobot {
         intake = new Intake();
         roller = new Roller();
         driver = new DriveTrain();
+        shooter = new HighShooter();
 
         
         // OI must be constructed after subsystems. If the OI creates Commands

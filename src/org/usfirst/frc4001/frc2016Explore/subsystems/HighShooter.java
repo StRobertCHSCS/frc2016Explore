@@ -14,7 +14,23 @@ public class HighShooter extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-	//private final CANTalon shooter = RobotMap.shooter;
+	private final CANTalon shooter = RobotMap.highshoot_motor;
+	
+	public HighShooter(){
+		super();
+		shooter.setFeedbackDevice(FeedbackDevice.QuadEncoder);
+		shooter.reverseSensor(false);
+		 /* set the peak and nominal outputs, 12V means full */
+        shooter.configNominalOutputVoltage(+0.0f, -0.0f);
+        shooter.configPeakOutputVoltage(+12.0f, 0.0f);
+		
+        shooter.setProfile(0);
+        shooter.setF(0.1097);
+        shooter.setP(0.22);
+        shooter.setI(0); 
+        shooter.setD(0);
+        
+	}
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -23,6 +39,10 @@ public class HighShooter extends Subsystem {
     
     public void fire(){
     	//shooter.changeControlMode(TalonControlMode.Speed);
+    	
+    	double targetSpeed = 1500.0; /* 1500 RPM in either direction */
+    	shooter.changeControlMode(TalonControlMode.Speed);
+    	shooter.set(targetSpeed);
     	
     	
     	
