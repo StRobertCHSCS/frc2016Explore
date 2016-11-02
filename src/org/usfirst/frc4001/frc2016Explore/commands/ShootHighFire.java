@@ -1,44 +1,43 @@
 package org.usfirst.frc4001.frc2016Explore.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import org.usfirst.frc4001.frc2016Explore.Robot;
+
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class ShootHighPrep extends Command {
+public class ShootHighFire extends Command {
 
-    public ShootHighPrep() {
+    public ShootHighFire() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.shooter);
-    	//requires(Robot.intake);
+    	
+    	//requires(Robot.shooter);
+    	requires(Robot.intake);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-     	//If the ball is not in position, end the command
-    	//if (!Robot.intake.ballset()){
-    	//	end();
-    	//}
-    
+      	if (!Robot.intake.ballset()){
+    		end();
+    	}	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooter.prep();
+    	Robot.intake.highfire();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        //return Robot.intake.ballset();
+    	return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.shooter.stop();
+    	Robot.intake.stop();
     }
 
     // Called when another command which requires one or more of the same

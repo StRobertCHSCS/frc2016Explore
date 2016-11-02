@@ -16,7 +16,7 @@ public class HighShooter extends Subsystem {
     // here. Call these from Commands.
 	
 	private final CANTalon shooter = RobotMap.highshoot_motor;
-	private final CANTalon intake = RobotMap.intakecontroller;
+
 	
 	
 	public HighShooter(){

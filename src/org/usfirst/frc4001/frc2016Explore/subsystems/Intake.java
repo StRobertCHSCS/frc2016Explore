@@ -41,9 +41,14 @@ public class Intake extends Subsystem {
     	controller.set(-0.5);
     }
     
-    public void fire(){
+    public void lowfire(){
     	// eject the ball at full speed
     	controller.set(-1);
+    }
+    
+    public void highfire(){
+    	// eject the ball at full speed
+    	controller.set(0.5);
     }
     
     public boolean ballset(){
