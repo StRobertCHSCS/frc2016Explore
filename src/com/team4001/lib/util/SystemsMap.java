@@ -17,9 +17,12 @@ public class SystemsMap {
 	public static final int CAN_DRIVETRAIN_REAR_RIGHT = 14;
 	
 	public static final int CAN_HIGHSHOOTER = 13;
+	public static final double HIGHSHOOTER_SPEED = 14000;
 	
 	
 	public static final int SOLENOID_ROLLER_DOWN = 0;
 	public static final int SOLENOID_ROLLER_UP = 1;
+	
+
 	
 }

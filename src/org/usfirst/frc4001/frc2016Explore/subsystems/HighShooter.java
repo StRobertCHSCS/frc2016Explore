@@ -1,6 +1,7 @@
 package org.usfirst.frc4001.frc2016Explore.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import com.team4001.lib.util.SystemsMap;
 import org.usfirst.frc4001.frc2016Explore.RobotMap;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
@@ -15,6 +16,8 @@ public class HighShooter extends Subsystem {
     // here. Call these from Commands.
 	
 	private final CANTalon shooter = RobotMap.highshoot_motor;
+	private final CANTalon intake = RobotMap.intakecontroller;
+	
 	
 	public HighShooter(){
 		super();
@@ -37,15 +40,17 @@ public class HighShooter extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void fire(){
+    public void prep(){
     	//shooter.changeControlMode(TalonControlMode.Speed);
     	
-    	double targetSpeed = 1500.0; /* 1500 RPM in either direction */
+    	double targetSpeed = SystemsMap.HIGHSHOOTER_SPEED; /* 1500 RPM in either direction */
     	shooter.changeControlMode(TalonControlMode.Speed);
     	shooter.set(targetSpeed);
-    	
-    	
-    	
     }
+    
+    public void stop(){
+    	shooter.set(0);
+    }
+  
 }
 

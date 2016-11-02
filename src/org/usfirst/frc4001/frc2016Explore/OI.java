@@ -63,6 +63,7 @@ public class OI {
 	public Gamepad game_controller;
 	//public Button axis_button;
 	public AxisButton roller_down;
+	public JoystickButton high_shoot;
 
 
     public OI() {
@@ -97,6 +98,9 @@ public class OI {
         //axis_button.whileHeld(new RollerDown());
         roller_down.whileHeld(new RollerDown());
         
+        
+        high_shoot = new JoystickButton(joystick, 2);
+        high_shoot.whileHeld(new ShootHighPrep());
         
 
     }
