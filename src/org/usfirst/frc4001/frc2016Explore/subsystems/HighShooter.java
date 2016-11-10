@@ -43,7 +43,9 @@ public class HighShooter extends Subsystem {
     public void prep(){
     	//shooter.changeControlMode(TalonControlMode.Speed);
     	
-    	double targetSpeed = SystemsMap.HIGHSHOOTER_SPEED; /* 1500 RPM in either direction */
+    	//double targetSpeed =  SystemsMap.HIGHSHOOTER_SPEED_MIN - RobotMap.pot.get()/10*4000; /* 1500 RPM in either direction */
+    	double targetSpeed = SystemsMap.HIGHSHOOTER_SPEED_MAX;
+    	System.out.println(targetSpeed);
     	shooter.changeControlMode(TalonControlMode.Speed);
     	shooter.set(targetSpeed);
     }

@@ -13,12 +13,13 @@ package org.usfirst.frc4001.frc2016Explore;
 
 import com.team4001.lib.util.SystemsMap;
 
+
 // Import libraries for components
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Solenoid;
-
-
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
+import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
@@ -39,6 +40,7 @@ public class RobotMap {
     public static CANTalon front_left_motor;
     public static CANTalon front_right_motor;
     public static CANTalon highshoot_motor;
+    public static Potentiometer pot;
 
     public static void init() {
         // Instantiate raw mappings of components
@@ -70,7 +72,7 @@ public class RobotMap {
         // High Shooter
         highshoot_motor = new CANTalon(SystemsMap.CAN_HIGHSHOOTER);
         
-        
+        pot = new AnalogPotentiometer(0,10,0);
         
         
     }

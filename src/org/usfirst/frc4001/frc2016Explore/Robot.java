@@ -108,6 +108,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean(" BALL IN POSITION", intake.ballset());
         SmartDashboard.putNumber("LEFT STICK Y", oi.game_controller.getLeftY());
         SmartDashboard.putNumber("RIGHT STICK X", oi.game_controller.getRightX());
+        SmartDashboard.putNumber("Potentiometer", RobotMap.pot.get());
     }
 
     /**
