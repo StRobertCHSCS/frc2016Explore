@@ -23,6 +23,15 @@ public class SystemsMap {
 	public static final int SOLENOID_ROLLER_DOWN = 0;
 	public static final int SOLENOID_ROLLER_UP = 1;
 	
+	public static final int TARGETING_TURN_LEFT = 0; 	// arduino out pin 3
+	public static final int TARGETING_TURN_RIGHT = 1; 	// arduino out pin 4
+	public static final int TARGETING_HEAD_UP = 2;		// arduino out pin 5
+	public static final int TARGETING_HEAD_DOWN = 3;	// arduino out pin 6
+	public static final int TARGETING_FAST_X = 4;		// arduino out pin 8
+	public static final int TARGETING_FAST_Y = 5;		// arduino out pin 9
+	
+	
+	
 
 	
 }

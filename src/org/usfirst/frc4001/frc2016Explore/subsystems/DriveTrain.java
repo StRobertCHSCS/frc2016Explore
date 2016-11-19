@@ -34,6 +34,14 @@ public class DriveTrain extends Subsystem {
 
     }
     
+    public void pivotLeft(double speed){
+    	drive.arcadeDrive(0,-speed);
+    }
+    
+    public void pivotRight(double speed){
+    	drive.arcadeDrive(0,speed);
+    }
+    
     public void hardStop(){
     	drive.arcadeDrive(0, 0);
     }

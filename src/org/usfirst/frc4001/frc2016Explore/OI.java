@@ -73,6 +73,7 @@ public class OI {
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("IntakeReceive", new IntakeReceive());
         SmartDashboard.putData("Roller Down", new RollerDown());
+        SmartDashboard.putData("Lock Target", new LockTarget());
         
         
         game_controller = new Gamepad(0);
@@ -99,12 +100,14 @@ public class OI {
         //axis_button.whileHeld(new RollerDown());
         roller_down.whileHeld(new RollerDown());
         
-        
+        // high_shoot_prep
         high_shoot_prep = new JoystickButton(joystick, 2);
         high_shoot_prep.whileHeld(new ShootHighPrep());
         
         high_shoot_fire = new JoystickButton(joystick, 1);
         high_shoot_fire.whileHeld(new ShootHighFire());
+        
+        
 
     }
     
