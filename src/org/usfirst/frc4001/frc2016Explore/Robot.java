@@ -20,6 +20,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc4001.frc2016Explore.commands.*;
 import org.usfirst.frc4001.frc2016Explore.subsystems.*;
 
+import com.team4001.lib.util.DashboardLabels;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -105,9 +107,9 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        SmartDashboard.putBoolean(" BALL IN POSITION", intake.ballset());
-        SmartDashboard.putNumber("LEFT STICK Y", oi.game_controller.getLeftY());
-        SmartDashboard.putNumber("RIGHT STICK X", oi.game_controller.getRightX());
+        SmartDashboard.putBoolean(DashboardLabels.bool_BALLINPOSITION, intake.ballset());
+        SmartDashboard.putNumber(DashboardLabels.num_LEFT_STICK_Y, oi.game_controller.getLeftY());
+        SmartDashboard.putNumber(DashboardLabels.num_RIGHT_STICK_X, oi.game_controller.getRightX());
     }
 
     /**

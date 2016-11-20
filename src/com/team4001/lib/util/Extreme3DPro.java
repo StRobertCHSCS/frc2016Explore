@@ -18,6 +18,7 @@ public class Extreme3DPro extends Joystick{
 		super(joystickport);
 	}
 	
+	// GET INSTANCE METHODS	
 	public JoystickButton getStickTriggerButton(){
 		return new JoystickButton(this, STICK_AXIS_TRIGGER);
 	}
@@ -32,6 +33,19 @@ public class Extreme3DPro extends Joystick{
 	
 	public JoystickButton getStickButton_rightLower(){
 		return new JoystickButton(this, STICK_BUTTON_RIGHT_LOWER);
+	}
+	
+	// GET STATE METHODS
+	public boolean getButtonState_Stick_Thumb(){
+		return getRawButton(STICK_BUTTON_THUMB);
+	}
+	
+	public boolean getButtonState_Stick_LeftLower(){
+		return getRawButton(STICK_BUTTON_LEFT_LOWER);
+	}
+	
+	public boolean getButtonState_Stick_RightLower(){
+		return getRawButton(STICK_BUTTON_RIGHT_LOWER);
 	}
 
 }
