@@ -59,12 +59,15 @@ public class OI {
 
 	public JoystickButton intakeButton;
 	public JoystickButton low_shoot;
-	public Joystick joystick;
+	//public Joystick joystick;
 	public Gamepad game_controller;
+	public Extreme3DPro joystick;
 	//public Button axis_button;
 	public AxisButton roller_down;
 	public JoystickButton high_shoot_prep;
 	public JoystickButton high_shoot_fire;
+	public JoystickButton lockTarget;
+	
 
 
     public OI() {
@@ -77,7 +80,7 @@ public class OI {
         
         
         game_controller = new Gamepad(0);
-        joystick = new Joystick(1);
+        joystick = new Extreme3DPro(1);
         
         // *** GAME CONTROLLER BUTTONS & CONTROL ***
         
@@ -86,13 +89,6 @@ public class OI {
         intakeButton = game_controller.getRightShoulder();
         intakeButton.whileHeld(new IntakeReceive());
         
-        // *** JOYSTICK BUTTONS & CONTROL ***
-        
-        //low shoot
-        low_shoot = new JoystickButton(joystick, 3);
-        low_shoot.whileHeld(new ShootLow());
-        
-        System.out.println("checking right trigger");
         //axis_button = new AxisButton(game_controller, 3);
         //roller_down = game_controller.getRightTriggerClick();
         roller_down = game_controller.getRightAxisButton();
@@ -100,14 +96,23 @@ public class OI {
         //axis_button.whileHeld(new RollerDown());
         roller_down.whileHeld(new RollerDown());
         
+        
+        // *** JOYSTICK BUTTONS & CONTROL ***
+        
+        //low shoot
+        low_shoot = joystick.getStickButton_leftLower();
+        
+        
         // high_shoot_prep
-        high_shoot_prep = new JoystickButton(joystick, 2);
+        high_shoot_prep = joystick.getStickButton_Thumb();
         high_shoot_prep.whileHeld(new ShootHighPrep());
         
-        high_shoot_fire = new JoystickButton(joystick, 1);
+        high_shoot_fire = joystick.getStickTriggerButton();
         high_shoot_fire.whileHeld(new ShootHighFire());
         
-        
+        // lock onto target
+        lockTarget = joystick.getStickButton_rightLower();
+        lockTarget.whileHeld(new LockTarget());
 
     }
     

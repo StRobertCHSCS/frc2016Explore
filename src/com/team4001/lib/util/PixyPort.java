@@ -44,11 +44,11 @@ public class PixyPort {
 	}
 	
 	public boolean noTarget(){
-		return !(turnRight() || turnLeft());
+		return fastX() && fastY();
 	}
 	
 	public boolean targetLock(){
-		return turnRight() && turnLeft();
+		return !(turnRight() && turnLeft() && fastX() && fastY());
 	}
 
 }
