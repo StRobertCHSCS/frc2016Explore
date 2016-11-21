@@ -77,6 +77,8 @@ public class OI {
         SmartDashboard.putData("IntakeReceive", new IntakeReceive());
         SmartDashboard.putData("Roller Down", new RollerDown());
         SmartDashboard.putData("Lock Target", new LockTarget());
+        SmartDashboard.putData("Turn Left", new TurnLeft());
+        SmartDashboard.putData("Turn Right", new TurnRight());
         
         
         game_controller = new Gamepad(0);

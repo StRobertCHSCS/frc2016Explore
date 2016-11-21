@@ -64,6 +64,8 @@ public class RobotMap {
         rear_right_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_REAR_RIGHT);
         front_left_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_FRONT_LEFT);
         front_right_motor = new CANTalon(SystemsMap.CAN_DRIVETRAIN_FRONT_RIGHT);
+        LiveWindow.addActuator("Driver", "Pivot Left", roller_rolldown);
+        
         
         rear_left_motor.setInverted(true);
         front_left_motor.setInverted(true);
