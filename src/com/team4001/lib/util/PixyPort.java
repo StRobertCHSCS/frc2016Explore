@@ -19,6 +19,14 @@ public class PixyPort {
 		di_fastY = new DigitalInput(SystemsMap.TARGETING_FAST_Y);
 	}
 	
+	public void printState(){
+		System.out.println("********************");
+		System.out.println("Pixy Port Status");
+		System.out.println("TURN_LEFT " + turnLeft() );
+		System.out.println("TURN_RIGHT " + turnRight() );
+		
+	}
+	
 	public boolean turnLeft(){
 		return di_turnLeft.get();
 	}
@@ -48,7 +56,7 @@ public class PixyPort {
 	}
 	
 	public boolean targetLock(){
-		return !(turnRight() && turnLeft() && fastX() && fastY());
+		return !(turnRight() && turnLeft());
 	}
 
 }

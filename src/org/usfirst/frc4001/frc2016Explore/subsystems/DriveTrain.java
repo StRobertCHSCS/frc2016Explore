@@ -10,7 +10,7 @@ import org.usfirst.frc4001.frc2016Explore.commands.ArcadeDrive;
 /**
  *
  */
-public class DriveTrain extends Subsystem {
+public class DriveTrain extends Subsystem { 
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -21,6 +21,10 @@ public class DriveTrain extends Subsystem {
 	
 	private final RobotDrive drive = new RobotDrive(frontLeftMotor, rearLeftMotor,frontRightMotor , rearRightMotor);
 	
+	public DriveTrain(){
+		drive.setSafetyEnabled(false);
+	}
+	
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -30,16 +34,37 @@ public class DriveTrain extends Subsystem {
     
     
     public void arcadeDrive(double forward, double turn){
+
     	drive.arcadeDrive(forward, turn,false);
 
     }
     
+    public void runLeftDrive(double power)
+    {
+    	this.frontLeftMotor.set(power);
+    	this.rearLeftMotor.set(power);
+    }
+    
+    public void runRightDrive(double power)
+    {
+    	this.frontRightMotor.set(power);
+    	this.rearRightMotor.set(power);
+    }
+    
     public void pivotLeft(double speed){
-    	drive.arcadeDrive(0,-speed);
+    	System.out.println("pivoting left");
+    	System.out.println(speed);
+    	//drive.arcadeDrive(0,-speed, true);
+    	runLeftDrive(speed);
+    	runRightDrive(speed);
     }
     
     public void pivotRight(double speed){
-    	drive.arcadeDrive(0,speed);
+    	System.out.println("pivoting right");
+    	System.out.println(speed);
+    	//drive.arcadeDrive(0,speed, true);
+    	runLeftDrive(-1*speed);
+    	runRightDrive(-1*speed);
     }
     
     public void hardStop(){

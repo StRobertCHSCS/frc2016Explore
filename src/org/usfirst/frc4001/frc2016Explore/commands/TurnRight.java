@@ -19,7 +19,7 @@ public class TurnRight extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.driver.pivotRight(1);
+    	Robot.driver.pivotRight(0.5);
     }
 
     // Called repeatedly when this Command is scheduled to run
