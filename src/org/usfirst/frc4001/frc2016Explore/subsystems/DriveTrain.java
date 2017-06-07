@@ -2,7 +2,7 @@ package org.usfirst.frc4001.frc2016Explore.subsystems;
 
 import org.usfirst.frc4001.frc2016Explore.RobotMap;
 
-import edu.wpi.first.wpilibj.CANTalon;
+import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4001.frc2016Explore.commands.ArcadeDrive;

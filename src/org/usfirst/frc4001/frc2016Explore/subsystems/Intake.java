@@ -1,13 +1,10 @@
 package org.usfirst.frc4001.frc2016Explore.subsystems;
 
-import org.usfirst.frc4001.frc2016Explore.Robot;
 import org.usfirst.frc4001.frc2016Explore.RobotMap;
-import org.usfirst.frc4001.frc2016Explore.commands.*;
-import edu.wpi.first.wpilibj.CANTalon;
+
+import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Solenoid;
-	import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
 
 /**

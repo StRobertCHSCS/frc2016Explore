@@ -3,9 +3,12 @@ package org.usfirst.frc4001.frc2016Explore.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.team4001.lib.util.SystemsMap;
 import org.usfirst.frc4001.frc2016Explore.RobotMap;
-import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
-import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
+import com.ctre.CANTalon;
+import com.ctre.CANTalon.FeedbackDevice;
+import com.ctre.CANTalon.TalonControlMode;
+
+
+
 
 /**
  *
